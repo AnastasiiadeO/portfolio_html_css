@@ -1,0 +1,181 @@
+/*import fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat+Alternates&display=swap');
+
+/*variaveis de css*/
+:root {
+    --cor-primaria: #142238;
+    --cor-primaria-alt: #1d2e4e;
+    --cor-secundaria:#BEAF88;
+    --cor-secundaria-alt:#3D1714;
+    --cor-terciaria: #AB5128;
+    --cor-border: #8C3E11;
+    --fonte-title: 'Krona One', sans-serif;
+    --fonte-p: 'Montserrat Alternates', sans-serif;
+}
+
+/*:root {
+    --cor-primaria: #0C2D57;
+    --cor-primaria-alt: #1e65c3;
+    --cor-secundaria:#EFECEC;
+    --cor-secundaria-alt:#FFB0B0;
+    --cor-terciaria: #FC6736;
+    --cor-border: #FFB0B0;
+    --fonte-title: 'Krona One', sans-serif;
+    --fonte-p: 'Montserrat Alternates', sans-serif;
+}*/
+
+
+/*para colocar parametro que vai ser padrao para todos dos elementos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho{
+    display: flex;
+    padding: 2% 0% 0% 8%
+}
+
+.cabecalho__menu {
+    display: flex;
+    /*!!!para tamanhos seguirem aplicasoes do navegador do usuario, temos que aplicar medidas relativas e nao absolutos*/
+    gap: 5rem;   /*medida rem 1=16px entao 80px = 80/16 = 5rem*/
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-p);
+    font-size: 1.5rem /*24px*/;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+body {
+    /*height: 100vh; /*100% da tela*/
+    box-sizing: border-box; /*para garantir que nada fique de fora da tela*/
+    background-color: var(--cor-primaria);
+    color:  var(--cor-secundaria);
+}
+/*criar um layout que acomode os dois blocos de conteúdo lado a lado*/
+.apresentacao {
+    /*12% no vertical e 15% no horisontal*/
+    /*margin: 10% 15%;*/
+    padding: 8% 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*para centralizar os itens verticalmente no container*/
+    gap: 2.5rem /*40px*/;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem /*20px*/;
+}
+
+.apresentacao__conteudo__titulo{
+    font-size: 2.25rem;
+    font-family: var(--fonte-title);
+}
+.titulo-distaque{
+    color:  var(--cor-terciaria);
+}
+.titulo-distaque:hover {
+    color:  var(--cor-secundaria-alt);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-p);
+}
+
+
+
+
+.apresentacao__link {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9375rem;
+}
+.apresentacao__link__titulo {
+    font-family: var(--fonte-title);
+    font-size: 1.125rem;
+    color:  var(--cor-terciaria);
+}
+.apresentacao__link__botao{    
+    display: flex;
+    justify-content: center;
+    gap: 0.625rem;
+    color: var(--cor-secundaria);
+    border: 0.125rem groove var(--cor-border);
+    border-radius: 0.5rem;
+    width: 50%/*23.625rem*/;
+    /*21.5 no vertical e 0 no horisontal*/
+    padding: 0.9375rem 0px;
+    text-decoration: none; /*tirar anderline no link*/
+    font-family: var(--fonte-p);
+    font-size: 1.125rem;
+    font-weight: 600; /*mais grosso*/
+    /*text-align: center;*/
+    align-items: center;
+    
+}
+
+.apresentacao__link__botao:hover {
+   background-color: var(--cor-primaria-alt);
+}
+
+
+.apresentacao__foto {
+    width: 75%;
+    border-radius: 1.5625rem;
+    border: 0.125rem solid var(--cor-border);
+    padding: 0.25rem;
+}
+
+.apresentacao__foto:hover {
+    width: 40%;
+    border: 0.3125rem solid var(--cor-primaria-alt);
+       
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    gap: 0.3125rem;
+    align-items: center;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 1.5rem;
+    /*text-align: center;*/
+    font-family: var(--fonte-p);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.sobremim__distaque {
+    color:  var(--cor-terciaria);
+}
+/*para criar mudancas atraves de parametro ex.: tamanho a tela*/
+@media (max-width: 1023px){
+    .apresentacao {
+        /* column- revers inverter para imagem ficar em cima*/
+        flex-direction: column-reverse;
+    }
+    .cabecalho {
+        padding: 15% 0% 0% 15%
+    }
+    .cabecalho__menu {
+        justify-content: center;
+    }
+    .apresentacao__conteudo{
+        width: auto;
+    }
+    .apresentacao__foto {
+        padding: 0%;
+        width: 100%;
+    }
+}
