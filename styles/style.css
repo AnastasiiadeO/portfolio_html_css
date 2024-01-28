@@ -1,7 +1,7 @@
 /*import fontes*/
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat+Alternates&display=swap');
 
-/*variaveis de css*/
+/*variaveis*/
 :root {
     --cor-primaria: #142238;
     --cor-primaria-alt: #1d2e4e;
@@ -13,19 +13,6 @@
     --fonte-p: 'Montserrat Alternates', sans-serif;
 }
 
-/*:root {
-    --cor-primaria: #0C2D57;
-    --cor-primaria-alt: #1e65c3;
-    --cor-secundaria:#EFECEC;
-    --cor-secundaria-alt:#FFB0B0;
-    --cor-terciaria: #FC6736;
-    --cor-border: #FFB0B0;
-    --fonte-title: 'Krona One', sans-serif;
-    --fonte-p: 'Montserrat Alternates', sans-serif;
-}*/
-
-
-/*para colocar parametro que vai ser padrao para todos dos elementos */
 * {
     margin: 0;
     padding: 0;
@@ -38,40 +25,36 @@
 
 .cabecalho__menu {
     display: flex;
-    /*!!!para tamanhos seguirem aplicasoes do navegador do usuario, temos que aplicar medidas relativas e nao absolutos*/
     gap: 5rem;   /*medida rem 1=16px entao 80px = 80/16 = 5rem*/
 }
 
 .cabecalho__menu__link {
     font-family: var(--fonte-p);
-    font-size: 1.5rem /*24px*/;
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
 }
 
 body {
-    /*height: 100vh; /*100% da tela*/
-    box-sizing: border-box; /*para garantir que nada fique de fora da tela*/
+    box-sizing: border-box; 
     background-color: var(--cor-primaria);
     color:  var(--cor-secundaria);
 }
-/*criar um layout que acomode os dois blocos de conteúdo lado a lado*/
+
 .apresentacao {
-    /*12% no vertical e 15% no horisontal*/
-    /*margin: 10% 15%;*/
     padding: 8% 8%;
     display: flex;
     justify-content: space-between;
-    align-items: center; /*para centralizar os itens verticalmente no container*/
-    gap: 2.5rem /*40px*/;
+    align-items: center; 
+    gap: 2.5rem;
 }
 
 .apresentacao__conteudo {
     width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem /*20px*/;
+    gap: 1.25rem;
 }
 
 .apresentacao__conteudo__titulo{
@@ -89,9 +72,6 @@ body {
     font-size: 1.5rem;
     font-family: var(--fonte-p);
 }
-
-
-
 
 .apresentacao__link {
     display: flex;
@@ -112,14 +92,12 @@ body {
     color: var(--cor-secundaria);
     border: 0.125rem groove var(--cor-border);
     border-radius: 0.5rem;
-    width: 50%/*23.625rem*/;
-    /*21.5 no vertical e 0 no horisontal*/
+    width: 50%;
     padding: 0.9375rem 0px;
-    text-decoration: none; /*tirar anderline no link*/
+    text-decoration: none; 
     font-family: var(--fonte-p);
     font-size: 1.125rem;
-    font-weight: 600; /*mais grosso*/
-    /*text-align: center;*/
+    font-weight: 600; 
     align-items: center;
     
 }
@@ -150,7 +128,6 @@ body {
     color: var(--cor-primaria);
     background-color: var(--cor-terciaria);
     padding: 1.5rem;
-    /*text-align: center;*/
     font-family: var(--fonte-p);
     font-size: 1rem;
     font-weight: 600;
@@ -159,10 +136,10 @@ body {
 .sobremim__distaque {
     color:  var(--cor-terciaria);
 }
-/*para criar mudancas atraves de parametro ex.: tamanho a tela*/
+
+/*modo mobile*/
 @media (max-width: 1023px){
     .apresentacao {
-        /* column- revers inverter para imagem ficar em cima*/
         flex-direction: column-reverse;
     }
     .cabecalho {
