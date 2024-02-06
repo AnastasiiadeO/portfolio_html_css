@@ -1,5 +1,5 @@
 ## Meu primeiro projeto HTML e CSS
-A [link para site do projeto](https://portfolio-blond-one-59.vercel.app/
+A [link para site do projeto](https://portfolio-blond-one-59.vercel.app/)
 
 
 
